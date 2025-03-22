@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './not-found.css'; // import 404 page styles
 
 function NotFound() {
   return (
