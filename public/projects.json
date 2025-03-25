@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "name": "QuickCash",
+      "description": "A job posting app for job seekers and employers to connect. Developed using React, Firebase, and styled with custom CSS.",
+      "technologies": ["React", "Firebase", "CSS"]
+    },
+    {
+      "id": 2,
+      "name": "Chess Game",
+      "description": "A Python-based chess game built with Pygame. I implemented game logic, a player vs AI mode, and a user interface for the game.",
+      "technologies": ["Python", "Pygame"]
+    },
+    {
+      "id": 3,
+      "name": "Portfolio Website",
+      "description": "This personal portfolio website, built with React, is a showcase of my skills, projects, and experience in software development.",
+      "technologies": ["React", "HTML", "CSS"]
+    }
+  ]
+  

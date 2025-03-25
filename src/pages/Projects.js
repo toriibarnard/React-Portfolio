@@ -1,7 +1,32 @@
-import React from 'react';
-import './projects.css'; // import projects page styles
+import React, { useState, useEffect } from 'react';
+import './projects.css';
 
 function Projects() {
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // fetch project data from the JSON file
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch('/projects.json');
+        if (!response.ok) throw new Error('Failed to fetch projects');
+        const data = await response.json();
+        setProjects(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  if (loading) return <p>Loading projects...</p>;
+  if (error) return <p>Error: {error}</p>;
+
   return (
     <div className="projects-container">
       <section className="projects-header">
@@ -10,23 +35,13 @@ function Projects() {
       </section>
 
       <section className="projects-list">
-        <div className="project-card">
-          <h3>QuickCash</h3>
-          <p>A job posting app for job seekers and employers to connect. Developed using React, Firebase, and styled with custom CSS.</p>
-          <span>Technologies Used: React, Firebase, CSS</span>
-        </div>
-
-        <div className="project-card">
-          <h3>Chess Game</h3>
-          <p>A Python-based chess game built with Pygame. I implemented game logic, a player vs AI mode, and a user interface for the game.</p>
-          <span>Technologies Used: Python, Pygame</span>
-        </div>
-
-        <div className="project-card">
-          <h3>Portfolio Website</h3>
-          <p>This personal portfolio website, built with React, is a showcase of my skills, projects, and experience in software development.</p>
-          <span>Technologies Used: React, HTML, CSS</span>
-        </div>
+        {projects.map(project => (
+          <div key={project.id} className="project-card">
+            <h3>{project.name}</h3>
+            <p>{project.description}</p>
+            <span>Technologies Used: {project.technologies.join(', ')}</span>
+          </div>
+        ))}
       </section>
 
       <section className="projects-footer">
@@ -37,3 +52,4 @@ function Projects() {
 }
 
 export default Projects;
+

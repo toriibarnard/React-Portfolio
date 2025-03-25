@@ -45,6 +45,37 @@ header {
     color: #ff6347; /* hover color */
     text-decoration: underline;
   }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px; 
+    transition: background-color 0.3s, transform 0.3s;
+    margin-left: 20px;
+  }
+  
+  button:hover {
+    background-color: #0056b3; 
+    transform: scale(1.05);
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  .app.dark button {
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #bbb;
+  }
+  
+  .app.dark button:hover {
+    background-color: #555;
+  }
   
   /* footer styles */
   footer {

@@ -14,6 +14,16 @@ body {
     width: 100%;
     margin: 0 auto;
   }
+
+  .home-container.light {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .home-container.dark {
+    background-color: #121212;
+    color: #fff;
+  }
   
   /* hero section */
   .hero {
