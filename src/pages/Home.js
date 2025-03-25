@@ -1,4 +1,5 @@
 import React from 'react';
+import WeatherComponent from '../components/WeatherComponent';
 import './home.css'; // import home page styles
 
 function Home() {
@@ -10,6 +11,8 @@ function Home() {
           <p>I'm a passionate full-stack developer, cybersecurity enthusiast, and lifelong learner.</p>
         </div>
       </section>
+
+      <WeatherComponent />
 
       <section className="skills">
         <h2>My Skills</h2>

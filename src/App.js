@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
       <Header />
-      <div className={'app ${theme}'}>
+      <div className={'app'}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
